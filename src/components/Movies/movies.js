@@ -15,6 +15,7 @@ export default function Movie({
     Poster,
     Response,
     Images,
+    onMovieDelete,
 }) {
     return (
         <article>
@@ -27,6 +28,7 @@ export default function Movie({
             </main>
             <footer>
                 <p>Director: {Director}</p>
+                <button onClick={() => onMovieDelete(Title)}>Delete</button>
             </footer>
         </article>
     );
