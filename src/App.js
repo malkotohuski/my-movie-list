@@ -9,11 +9,21 @@ function App() {
         setMovieList((state) => state.filter((x) => x.Title !== Title));
     };
 
+    const onMovieFilter = (Title) => {
+        setMovieList((state) =>
+            state.map((x) => ({ ...x, selected: x.Title === Title }))
+        );
+    };
+
     return (
         <div>
             <h1>Movie List</h1>
 
-            <MovieList movies={movieList} onMovieDelete={onMovieDelete} />
+            <MovieList
+                movies={movieList}
+                onMovieDelete={onMovieDelete}
+                onMovieFilter={onMovieFilter}
+            />
         </div>
     );
 }
